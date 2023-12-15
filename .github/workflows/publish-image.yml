@@ -13,5 +13,6 @@ jobs:
           docker build . -t javeedambu/hello-docker-hub:latest
       - name: Publish
         run: |
+          docker login -u javeedambu -p ${{secrets.DOCKER_HUB_TOKEN}}
           docker push javeedambu/hello-docker-hub:latest
 
